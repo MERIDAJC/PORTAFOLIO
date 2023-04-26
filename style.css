@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+      
+    background-color: black;
+    
+   
+}
+
+
+
+
+ 
+.box{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: rgb(12, 12, 12) ;
+    border-radius: 50%;
+    overflow: hidden;
+}
+ .box::before{
+    content:'';
+    position: absolute;
+    inset: -10px 140px;
+    background: linear-gradient(315deg, rgb(108, 47, 174),rgb(68, 151, 202));
+    transition: 0.5s;
+    animation:  animate 4s linear infinite;
+
+ }
+ .box:hover:before{
+
+    inset: -20px 0px;
+ }
+
+ @keyframes animate 
+ {
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+ }
+ 
+.box::after{
+    content:'';
+    position: absolute;
+    inset: 6px;
+    background-color: rgb(10, 11, 14);
+    border-radius: 50%;
+    z-index: 1;
+    
+}
+
+.content{
+    position: absolute;
+    inset: 20px;
+    border: 10px solid rgb(38, 93, 212);
+    z-index: 3;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.content img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 3;
+}
+.box:hover .content img{
+opacity: 0;
+
+}
+.content h2{
+    position: relative;
+    font-size: 1.5em;
+    text-align: center;
+    color: aliceblue;
+    letter-spacing: 0.05em;
+
+}
+.contenedor{
+    grid-area: auto;
+    align-self: center;
+    justify-self: center;
+    
+  
+}
+.tex{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+}
+
+  
+.completo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    height: auto;
+    border: 3ps solid red;
+   
+}
+
+.cabecera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1500px;
+    height: 400px;
+    margin: 190px auto;       
+    background-image: url(./imagen/codigo3.jpg);
+    background-size: 100%;
+    border-radius: 15px;
+    animation: movimiento 8s infinite linear alternate;
+    background: linear-gradient((left,black));
+    opacity: 0.8;
+}
+@keyframes movimiento{
+    from{
+        background-position: bottom left;
+    }
+    to{
+        background-position: top right;
+    }
+}
+
+
+.fcc-btn {
+    margin: 10px;
+    position: relative;
+    background-color: #2a6781;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 25px;
+  }
+  
+  .fcc-btn:hover {
+    background-color: #6f7288;
+  }
